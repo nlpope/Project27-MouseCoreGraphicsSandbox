@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		401E025B2D91C67800DD5BA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401E02392D91C67300DD5BA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 401E02402D91C67300DD5BA6;
+			remoteInfo = "Project27-MouseCoreGraphicsSandbox";
+		};
+		401E02652D91C67800DD5BA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401E02392D91C67300DD5BA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 401E02402D91C67300DD5BA6;
+			remoteInfo = "Project27-MouseCoreGraphicsSandbox";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		401E02412D91C67300DD5BA6 /* Project27-MouseCoreGraphicsSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project27-MouseCoreGraphicsSandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		401E025A2D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project27-MouseCoreGraphicsSandboxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		401E02642D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project27-MouseCoreGraphicsSandboxUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		401E026C2D91C67800DD5BA6 /* Exceptions for "Project27-MouseCoreGraphicsSandbox" folder in "Project27-MouseCoreGraphicsSandbox" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 401E02402D91C67300DD5BA6 /* Project27-MouseCoreGraphicsSandbox */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		401E02432D91C67300DD5BA6 /* Project27-MouseCoreGraphicsSandbox */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				401E026C2D91C67800DD5BA6 /* Exceptions for "Project27-MouseCoreGraphicsSandbox" folder in "Project27-MouseCoreGraphicsSandbox" target */,
+			);
+			path = "Project27-MouseCoreGraphicsSandbox";
+			sourceTree = "<group>";
+		};
+		401E025D2D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Project27-MouseCoreGraphicsSandboxTests";
+			sourceTree = "<group>";
+		};
+		401E02672D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Project27-MouseCoreGraphicsSandboxUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		401E023E2D91C67300DD5BA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401E02572D91C67800DD5BA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401E02612D91C67800DD5BA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		401E02382D91C67300DD5BA6 = {
+			isa = PBXGroup;
+			children = (
+				401E02432D91C67300DD5BA6 /* Project27-MouseCoreGraphicsSandbox */,
+				401E025D2D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxTests */,
+				401E02672D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxUITests */,
+				401E02422D91C67300DD5BA6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		401E02422D91C67300DD5BA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				401E02412D91C67300DD5BA6 /* Project27-MouseCoreGraphicsSandbox.app */,
+				401E025A2D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxTests.xctest */,
+				401E02642D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		401E02402D91C67300DD5BA6 /* Project27-MouseCoreGraphicsSandbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 401E026D2D91C67800DD5BA6 /* Build configuration list for PBXNativeTarget "Project27-MouseCoreGraphicsSandbox" */;
+			buildPhases = (
+				401E023D2D91C67300DD5BA6 /* Sources */,
+				401E023E2D91C67300DD5BA6 /* Frameworks */,
+				401E023F2D91C67300DD5BA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				401E02432D91C67300DD5BA6 /* Project27-MouseCoreGraphicsSandbox */,
+			);
+			name = "Project27-MouseCoreGraphicsSandbox";
+			packageProductDependencies = (
+			);
+			productName = "Project27-MouseCoreGraphicsSandbox";
+			productReference = 401E02412D91C67300DD5BA6 /* Project27-MouseCoreGraphicsSandbox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		401E02592D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 401E02722D91C67800DD5BA6 /* Build configuration list for PBXNativeTarget "Project27-MouseCoreGraphicsSandboxTests" */;
+			buildPhases = (
+				401E02562D91C67800DD5BA6 /* Sources */,
+				401E02572D91C67800DD5BA6 /* Frameworks */,
+				401E02582D91C67800DD5BA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				401E025C2D91C67800DD5BA6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				401E025D2D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxTests */,
+			);
+			name = "Project27-MouseCoreGraphicsSandboxTests";
+			packageProductDependencies = (
+			);
+			productName = "Project27-MouseCoreGraphicsSandboxTests";
+			productReference = 401E025A2D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		401E02632D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 401E02752D91C67800DD5BA6 /* Build configuration list for PBXNativeTarget "Project27-MouseCoreGraphicsSandboxUITests" */;
+			buildPhases = (
+				401E02602D91C67800DD5BA6 /* Sources */,
+				401E02612D91C67800DD5BA6 /* Frameworks */,
+				401E02622D91C67800DD5BA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				401E02662D91C67800DD5BA6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				401E02672D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxUITests */,
+			);
+			name = "Project27-MouseCoreGraphicsSandboxUITests";
+			packageProductDependencies = (
+			);
+			productName = "Project27-MouseCoreGraphicsSandboxUITests";
+			productReference = 401E02642D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		401E02392D91C67300DD5BA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					401E02402D91C67300DD5BA6 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					401E02592D91C67800DD5BA6 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 401E02402D91C67300DD5BA6;
+					};
+					401E02632D91C67800DD5BA6 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 401E02402D91C67300DD5BA6;
+					};
+				};
+			};
+			buildConfigurationList = 401E023C2D91C67300DD5BA6 /* Build configuration list for PBXProject "Project27-MouseCoreGraphicsSandbox" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 401E02382D91C67300DD5BA6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 401E02422D91C67300DD5BA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				401E02402D91C67300DD5BA6 /* Project27-MouseCoreGraphicsSandbox */,
+				401E02592D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxTests */,
+				401E02632D91C67800DD5BA6 /* Project27-MouseCoreGraphicsSandboxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		401E023F2D91C67300DD5BA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401E02582D91C67800DD5BA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401E02622D91C67800DD5BA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		401E023D2D91C67300DD5BA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401E02562D91C67800DD5BA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		401E02602D91C67800DD5BA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		401E025C2D91C67800DD5BA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 401E02402D91C67300DD5BA6 /* Project27-MouseCoreGraphicsSandbox */;
+			targetProxy = 401E025B2D91C67800DD5BA6 /* PBXContainerItemProxy */;
+		};
+		401E02662D91C67800DD5BA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 401E02402D91C67300DD5BA6 /* Project27-MouseCoreGraphicsSandbox */;
+			targetProxy = 401E02652D91C67800DD5BA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		401E026E2D91C67800DD5BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M9MT23QW7V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Project27-MouseCoreGraphicsSandbox/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "noahpope.Project27-MouseCoreGraphicsSandbox";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		401E026F2D91C67800DD5BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M9MT23QW7V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Project27-MouseCoreGraphicsSandbox/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "noahpope.Project27-MouseCoreGraphicsSandbox";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		401E02702D91C67800DD5BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		401E02712D91C67800DD5BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		401E02732D91C67800DD5BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M9MT23QW7V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "noahpope.Project27-MouseCoreGraphicsSandboxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project27-MouseCoreGraphicsSandbox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Project27-MouseCoreGraphicsSandbox";
+			};
+			name = Debug;
+		};
+		401E02742D91C67800DD5BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M9MT23QW7V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "noahpope.Project27-MouseCoreGraphicsSandboxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project27-MouseCoreGraphicsSandbox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Project27-MouseCoreGraphicsSandbox";
+			};
+			name = Release;
+		};
+		401E02762D91C67800DD5BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M9MT23QW7V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "noahpope.Project27-MouseCoreGraphicsSandboxUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Project27-MouseCoreGraphicsSandbox";
+			};
+			name = Debug;
+		};
+		401E02772D91C67800DD5BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M9MT23QW7V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "noahpope.Project27-MouseCoreGraphicsSandboxUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Project27-MouseCoreGraphicsSandbox";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		401E023C2D91C67300DD5BA6 /* Build configuration list for PBXProject "Project27-MouseCoreGraphicsSandbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				401E02702D91C67800DD5BA6 /* Debug */,
+				401E02712D91C67800DD5BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		401E026D2D91C67800DD5BA6 /* Build configuration list for PBXNativeTarget "Project27-MouseCoreGraphicsSandbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				401E026E2D91C67800DD5BA6 /* Debug */,
+				401E026F2D91C67800DD5BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		401E02722D91C67800DD5BA6 /* Build configuration list for PBXNativeTarget "Project27-MouseCoreGraphicsSandboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				401E02732D91C67800DD5BA6 /* Debug */,
+				401E02742D91C67800DD5BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		401E02752D91C67800DD5BA6 /* Build configuration list for PBXNativeTarget "Project27-MouseCoreGraphicsSandboxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				401E02762D91C67800DD5BA6 /* Debug */,
+				401E02772D91C67800DD5BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 401E02392D91C67300DD5BA6 /* Project object */;
+}
