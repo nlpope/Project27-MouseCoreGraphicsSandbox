@@ -16,25 +16,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pa6-LX-Q6b">
-                                <rect key="frame" x="16" y="59" width="361" height="655"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pa6-LX-Q6b">
+                                <rect key="frame" x="16" y="81" width="361.33333333333331" height="633.66666666666663"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKa-wE-ziR">
-                                <rect key="frame" x="156" y="735" width="82" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKa-wE-ziR">
+                                <rect key="frame" x="156" y="735.66666666666663" width="81.333333333333314" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Redraw"/>
                                 <connections>
                                     <action selector="redrawTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LdO-dl-qm7"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5jz-fA-Ptm">
+                                <rect key="frame" x="16" y="81" width="361" height="633.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="633.66666666666663" id="yiA-2D-mZp"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Pa6-LX-Q6b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gJB-GR-IBN"/>
-                            <constraint firstItem="Pa6-LX-Q6b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gbF-lw-5oi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pa6-LX-Q6b" secondAttribute="trailing" constant="16" id="zDN-gY-tMM"/>
+                            <constraint firstItem="5jz-fA-Ptm" firstAttribute="leading" secondItem="Pa6-LX-Q6b" secondAttribute="leading" id="1qa-CJ-BAm"/>
+                            <constraint firstItem="5jz-fA-Ptm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="2w8-gK-PG7"/>
+                            <constraint firstItem="5jz-fA-Ptm" firstAttribute="top" secondItem="Pa6-LX-Q6b" secondAttribute="top" id="Mk5-Fc-zrG"/>
+                            <constraint firstItem="5jz-fA-Ptm" firstAttribute="bottom" secondItem="Pa6-LX-Q6b" secondAttribute="bottom" id="O3q-ZJ-CC2"/>
+                            <constraint firstItem="FKa-wE-ziR" firstAttribute="top" secondItem="5jz-fA-Ptm" secondAttribute="bottom" constant="20.999999999999886" id="OHW-r9-fyx"/>
+                            <constraint firstItem="5jz-fA-Ptm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fr2-Z3-0nh"/>
+                            <constraint firstItem="5jz-fA-Ptm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="v45-MO-WLc"/>
+                            <constraint firstItem="5jz-fA-Ptm" firstAttribute="centerX" secondItem="FKa-wE-ziR" secondAttribute="centerX" id="xsA-wJ-cd5"/>
+                            <constraint firstItem="5jz-fA-Ptm" firstAttribute="trailing" secondItem="Pa6-LX-Q6b" secondAttribute="trailing" id="yZK-8N-onS"/>
                         </constraints>
                     </view>
                     <connections>
