@@ -11,13 +11,13 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(UIScreen.main.bounds.size)
-        drawEmoji()
+        drawFunnelWithLines()
     }
 
     @IBAction func redrawTapped(_ sender: Any) {
         currentDrawType += 1
 
-        if currentDrawType > 6 { currentDrawType = 0 }
+        if currentDrawType > 7 { currentDrawType = 0 }
 
         switch currentDrawType {
         case 0:
@@ -34,6 +34,8 @@ class HomeVC: UIViewController {
             drawMouseAndText()
         case 6:
             drawEmoji()
+        case 7:
+            heyTwin()
         default:
             break
         }
@@ -61,6 +63,8 @@ class HomeVC: UIViewController {
      ... logic = half the value of the line width since the stroke straddles the center
      for circles instead of rectangles, replace *.addRect with *.addEllipse within the
      ... display rect
+     
+     see: Paul Hudson > Project27-MouseCoreGraphicsSandBox
      */
 
     func drawRectangle() {
@@ -250,23 +254,43 @@ class HomeVC: UIViewController {
         
         imageView.image = img
     }
+    
+    
+    func heyTwin()
+    {
+        let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let img         = renderer.image { ctx in
+            var newLetter   = true
+            var lineWidth: Int!
+            var startPoint: CGPoint = CGPoint(x: 5, y: 10)
+            var upperRightEndPoint: CGPoint!
+            
+            if newLetter { ctx.cgContext.move(to: CGPoint(x: upperRightEndPoint.x + 5 , y: 10)) }
+        }
+    }
 }
 
-//func drawRectangle() {
-//    let renderer    = UIGraphicsImageRenderer(
-//        size: CGSize(width: 512, height: 512))
-//
+//func drawFunnelWithLines()
+//{
+//    let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+//    
 //    let img         = renderer.image { ctx in
-//        let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
-//            .insetBy(dx: 10, dy: 10)
-//
-//        ctx.cgContext.setFillColor(UIColor.red.cgColor)
+//        ctx.cgContext.translateBy(x: 256, y: 256)
+//        
+//        var first           = true
+//        var length: CGFloat = 256
+//        
+//        for _ in 0 ..< 256 {
+//            ctx.cgContext.rotate(by: .pi / 2)
+//            if first { ctx.cgContext.move(to: CGPoint(x: length, y: 50)); first = false }
+//            else { ctx.cgContext.addLine(to: CGPoint(x: length, y: 50)) }
+//            length *= 0.99
+//        }
+//        
 //        ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-//        ctx.cgContext.setLineWidth(20)
-//
-//        ctx.cgContext.addRect(rectangle)
-//        ctx.cgContext.drawPath(using: .fillStroke)
+//        ctx.cgContext.strokePath()
 //    }
-//
+//    
 //    imageView.image = img
 //}
