@@ -11,13 +11,13 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(UIScreen.main.bounds.size)
-        drawRectangle()
+        drawEmoji()
     }
 
     @IBAction func redrawTapped(_ sender: Any) {
         currentDrawType += 1
 
-        if currentDrawType > 5 { currentDrawType = 0 }
+        if currentDrawType > 6 { currentDrawType = 0 }
 
         switch currentDrawType {
         case 0:
@@ -29,9 +29,11 @@ class HomeVC: UIViewController {
         case 3:
             drawRotatedSquares()
         case 4:
-            drawLines()
+            drawFunnelWithLines()
         case 5:
             drawMouseAndText()
+        case 6:
+            drawEmoji()
         default:
             break
         }
@@ -66,8 +68,8 @@ class HomeVC: UIViewController {
             size: CGSize(width: 512, height: 512))
 
         let img         = renderer.image { ctx in
-            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(
-                dx: 10, dy: 10)
+            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
+                .insetBy(dx: 10, dy: 10)
 
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
@@ -85,8 +87,8 @@ class HomeVC: UIViewController {
             size: CGSize(width: 512, height: 512))
 
         let img         = renderer.image { ctx in
-            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(
-                dx: 10, dy: 10)
+            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
+                .insetBy(dx: 10, dy: 10)
 
             ctx.cgContext.setFillColor(UIColor.systemPink.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.systemPurple.cgColor)
@@ -147,7 +149,7 @@ class HomeVC: UIViewController {
     }
     
     
-    func drawLines()
+    func drawFunnelWithLines()
     {
         let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
         
@@ -182,7 +184,7 @@ class HomeVC: UIViewController {
             
             let attrs: [NSAttributedString.Key : Any] = [
                 .font: UIFont.systemFont(ofSize: 36),
-                .paragraphStyle: paragraphStyle
+                .paragraphStyle: paragraphStyle,
             ]
             
             let string              = "The best-laid schemes o'\nmice an' men gang aft agley"
@@ -197,4 +199,74 @@ class HomeVC: UIViewController {
         
         imageView.image = img
     }
+    
+    
+    func drawEmoji()
+    {
+        let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let img         = renderer.image { ctx in
+            // HEAD
+            let rectangle   = CGRect(x: 0, y: 0, width: 512, height: 512)
+                .insetBy(dx: 15, dy: 15)
+            
+            ctx.cgContext.setFillColor(UIColor.systemYellow.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(30)
+            
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            // LEFT EYE
+            let rectangle2  = CGRect(x: 80, y: 215, width: 120, height: 0)
+            
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(15)
+            
+            ctx.cgContext.addRect(rectangle2)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            // RIGHT EYE
+            let rectangle3  = CGRect(x: 290, y: 215, width: 120, height: 0)
+            
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(15)
+            
+            ctx.cgContext.addRect(rectangle3)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            // MOUTH
+            let rectangle4  = CGRect(x: 190, y: 380, width: 120, height: 0)
+            
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(15)
+            
+            ctx.cgContext.addRect(rectangle4)
+            ctx.cgContext.drawPath(using: .fillStroke)
+        }
+        
+        imageView.image = img
+    }
 }
+
+//func drawRectangle() {
+//    let renderer    = UIGraphicsImageRenderer(
+//        size: CGSize(width: 512, height: 512))
+//
+//    let img         = renderer.image { ctx in
+//        let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
+//            .insetBy(dx: 10, dy: 10)
+//
+//        ctx.cgContext.setFillColor(UIColor.red.cgColor)
+//        ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+//        ctx.cgContext.setLineWidth(20)
+//
+//        ctx.cgContext.addRect(rectangle)
+//        ctx.cgContext.drawPath(using: .fillStroke)
+//    }
+//
+//    imageView.image = img
+//}
