@@ -14,6 +14,7 @@
 		401E02882D91C68600DD5BA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401E02792D91C68600DD5BA6 /* Assets.xcassets */; };
 		401E028A2D91C68600DD5BA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401E027C2D91C68600DD5BA6 /* LaunchScreen.storyboard */; };
 		401E028B2D91C68600DD5BA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401E027E2D91C68600DD5BA6 /* Main.storyboard */; };
+		401F33B12D98483D00FF76AD /* Constants+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401F33B02D98483D00FF76AD /* Constants+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		401E02802D91C68600DD5BA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		401E02812D91C68600DD5BA6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		401E02832D91C68600DD5BA6 /* Project27_MouseCoreGraphicsSandbox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project27_MouseCoreGraphicsSandbox.xcdatamodel; sourceTree = "<group>"; };
+		401F33B02D98483D00FF76AD /* Constants+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -108,6 +110,7 @@
 		401E02822D91C68600DD5BA6 /* Project27-MouseCoreGraphicsSandbox */ = {
 			isa = PBXGroup;
 			children = (
+				401F33AF2D98481900FF76AD /* Utilities */,
 				401E028D2D91C6AE00DD5BA6 /* Screens */,
 				401E028C2D91C69700DD5BA6 /* Support */,
 				401E027A2D91C68600DD5BA6 /* Info.plist */,
@@ -134,6 +137,14 @@
 				401E02812D91C68600DD5BA6 /* HomeVC.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		401F33AF2D98481900FF76AD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				401F33B02D98483D00FF76AD /* Constants+Utils.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +294,7 @@
 				401E02842D91C68600DD5BA6 /* AppDelegate.swift in Sources */,
 				401E02852D91C68600DD5BA6 /* Project27_MouseCoreGraphicsSandbox.xcdatamodeld in Sources */,
 				401E02862D91C68600DD5BA6 /* SceneDelegate.swift in Sources */,
+				401F33B12D98483D00FF76AD /* Constants+Utils.swift in Sources */,
 				401E02872D91C68600DD5BA6 /* HomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
