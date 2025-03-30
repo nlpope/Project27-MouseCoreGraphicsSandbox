@@ -11,7 +11,8 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(UIScreen.main.bounds.size)
-        drawFunnelWithLines()
+        imageView.backgroundColor = .systemGray2
+        heyTwin()
     }
 
     @IBAction func redrawTapped(_ sender: Any) {
@@ -29,7 +30,7 @@ class HomeVC: UIViewController {
         case 3:
             drawRotatedSquares()
         case 4:
-            drawFunnelWithLines()
+            drawFibonacciSquare()
         case 5:
             drawMouseAndText()
         case 6:
@@ -63,15 +64,15 @@ class HomeVC: UIViewController {
      ... logic = half the value of the line width since the stroke straddles the center
      for circles instead of rectangles, replace *.addRect with *.addEllipse within the
      ... display rect
-     
+
      see: Paul Hudson > Project27-MouseCoreGraphicsSandBox
      */
 
     func drawRectangle() {
-        let renderer    = UIGraphicsImageRenderer(
+        let renderer = UIGraphicsImageRenderer(
             size: CGSize(width: 512, height: 512))
 
-        let img         = renderer.image { ctx in
+        let img = renderer.image { ctx in
             let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
                 .insetBy(dx: 10, dy: 10)
 
@@ -87,10 +88,10 @@ class HomeVC: UIViewController {
     }
 
     func drawCircle() {
-        let renderer    = UIGraphicsImageRenderer(
+        let renderer = UIGraphicsImageRenderer(
             size: CGSize(width: 512, height: 512))
 
-        let img         = renderer.image { ctx in
+        let img = renderer.image { ctx in
             let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
                 .insetBy(dx: 10, dy: 10)
 
@@ -106,10 +107,10 @@ class HomeVC: UIViewController {
     }
 
     func drawCheckerBoard() {
-        let renderer    = UIGraphicsImageRenderer(
+        let renderer = UIGraphicsImageRenderer(
             size: CGSize(width: 512, height: 512))
 
-        let img         = renderer.image { ctx in
+        let img = renderer.image { ctx in
             ctx.cgContext.setFillColor(UIColor.black.cgColor)
 
             for row in 0..<8 {
@@ -129,168 +130,193 @@ class HomeVC: UIViewController {
 
         imageView.image = img
     }
-    
-    
-    func drawRotatedSquares()
-    {
-        let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
-        
-        let img         = renderer.image { ctx in
+
+    func drawRotatedSquares() {
+        let renderer = UIGraphicsImageRenderer(
+            size: CGSize(width: 512, height: 512))
+
+        let img = renderer.image { ctx in
             ctx.cgContext.translateBy(x: 256, y: 256)
-            
-            let rotations   = 16
-            let amount      = Double.pi / Double(rotations)
-            for _ in 0 ..< rotations {
+
+            let rotations = 16
+            let amount = Double.pi / Double(rotations)
+            for _ in 0..<rotations {
                 ctx.cgContext.rotate(by: CGFloat(amount))
-                ctx.cgContext.addRect(CGRect(x: -128, y: -128, width: 256, height: 256))
+                ctx.cgContext.addRect(
+                    CGRect(x: -128, y: -128, width: 256, height: 256))
             }
-            
+
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             ctx.cgContext.strokePath()
         }
-        
+
         imageView.image = img
     }
-    
-    
-    func drawFunnelWithLines()
-    {
-        let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
-        
-        let img         = renderer.image { ctx in
+
+    func drawFibonacciSquare() {
+        let renderer = UIGraphicsImageRenderer(
+            size: CGSize(width: 512, height: 512))
+
+        let img = renderer.image { ctx in
             ctx.cgContext.translateBy(x: 256, y: 256)
-            
-            var first           = true
+
+            var first = true
             var length: CGFloat = 256
-            
-            for _ in 0 ..< 256 {
+
+            for _ in 0..<256 {
                 ctx.cgContext.rotate(by: .pi / 2)
-                if first { ctx.cgContext.move(to: CGPoint(x: length, y: 50)); first = false }
-                else { ctx.cgContext.addLine(to: CGPoint(x: length, y: 50)) }
+                if first {
+                    ctx.cgContext.move(to: CGPoint(x: length, y: 50))
+                    first = false
+                } else {
+                    ctx.cgContext.addLine(to: CGPoint(x: length, y: 50))
+                }
                 length *= 0.99
             }
-            
+
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             ctx.cgContext.strokePath()
         }
-        
+
         imageView.image = img
     }
-    
-    
-    func drawMouseAndText()
-    {
-        let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
-        
-        let img         = renderer.image { ctx in
-            let paragraphStyle          = NSMutableParagraphStyle()
-            paragraphStyle.alignment    = .center
-            
-            let attrs: [NSAttributedString.Key : Any] = [
+
+    func drawMouseAndText() {
+        let renderer = UIGraphicsImageRenderer(
+            size: CGSize(width: 512, height: 512))
+
+        let img = renderer.image { ctx in
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .center
+
+            let attrs: [NSAttributedString.Key: Any] = [
                 .font: UIFont.systemFont(ofSize: 36),
                 .paragraphStyle: paragraphStyle,
             ]
-            
-            let string              = "The best-laid schemes o'\nmice an' men gang aft agley"
-            let attributedString    = NSAttributedString(string: string, attributes: attrs)
-            attributedString.draw(with: CGRect(x: 32, y: 32, width: 448, height: 448),
-                                  options: .usesLineFragmentOrigin,
-                                  context: nil)
-            
-            let mouse               = UIImage(named: ImageKeys.mouse)
+
+            let string = "The best-laid schemes o'\nmice an' men gang aft agley"
+            let attributedString = NSAttributedString(
+                string: string, attributes: attrs)
+            attributedString.draw(
+                with: CGRect(x: 32, y: 32, width: 448, height: 448),
+                options: .usesLineFragmentOrigin,
+                context: nil)
+
+            let mouse = UIImage(named: ImageKeys.mouse)
             mouse?.draw(at: CGPoint(x: 300, y: 150))
         }
-        
+
         imageView.image = img
     }
-    
-    
-    func drawEmoji()
-    {
-        let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
-        
-        let img         = renderer.image { ctx in
+
+    func drawEmoji() {
+        let renderer = UIGraphicsImageRenderer(
+            size: CGSize(width: 512, height: 512))
+
+        let img = renderer.image { ctx in
             // HEAD
-            let rectangle   = CGRect(x: 0, y: 0, width: 512, height: 512)
+            let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
                 .insetBy(dx: 15, dy: 15)
-            
+
             ctx.cgContext.setFillColor(UIColor.systemYellow.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             ctx.cgContext.setLineWidth(30)
-            
+
             ctx.cgContext.addEllipse(in: rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
-            
+
             // LEFT EYE
-            let rectangle2  = CGRect(x: 80, y: 215, width: 120, height: 0)
-            
+            let rectangle2 = CGRect(x: 80, y: 215, width: 120, height: 0)
+
             ctx.cgContext.setFillColor(UIColor.black.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             ctx.cgContext.setLineWidth(15)
-            
+
             ctx.cgContext.addRect(rectangle2)
             ctx.cgContext.drawPath(using: .fillStroke)
-            
+
             // RIGHT EYE
-            let rectangle3  = CGRect(x: 290, y: 215, width: 120, height: 0)
-            
+            let rectangle3 = CGRect(x: 290, y: 215, width: 120, height: 0)
+
             ctx.cgContext.setFillColor(UIColor.black.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             ctx.cgContext.setLineWidth(15)
-            
+
             ctx.cgContext.addRect(rectangle3)
             ctx.cgContext.drawPath(using: .fillStroke)
-            
+
             // MOUTH
-            let rectangle4  = CGRect(x: 190, y: 380, width: 120, height: 0)
-            
+            let rectangle4 = CGRect(x: 190, y: 380, width: 120, height: 0)
+
             ctx.cgContext.setFillColor(UIColor.black.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             ctx.cgContext.setLineWidth(15)
-            
+
             ctx.cgContext.addRect(rectangle4)
             ctx.cgContext.drawPath(using: .fillStroke)
         }
-        
+
         imageView.image = img
     }
-    
-    
-    func heyTwin()
-    {
-        let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
-        
-        let img         = renderer.image { ctx in
-            var newLetter   = true
-            var lineWidth: Int!
-            var startPoint: CGPoint = CGPoint(x: 5, y: 10)
-            var upperRightEndPoint: CGPoint!
-            
-            if newLetter { ctx.cgContext.move(to: CGPoint(x: upperRightEndPoint.x + 5 , y: 10)) }
+
+    func heyTwin() {
+        let renderer = UIGraphicsImageRenderer(
+            size: CGSize(width: 512, height: 512))
+
+        let img = renderer.image { ctx in
+            ctx.cgContext.translateBy(x: 10, y: 100)
+            var startOfLetter = true
+            var currentLetter = 0
+            var startPointX: CGFloat = 0
+            var lineLength: CGFloat = 10
+
+            // letter T
+            for _ in 0 ... 10 {
+                if startOfLetter {
+                    ctx.cgContext.move(to: CGPoint(x: startPointX, y: 0))
+                    startOfLetter = false
+                    startPointX += 125
+                } else {
+                    switch currentLetter {
+                    // T
+                    case 0:
+                        
+                    default:
+                        break
+                    }
+                    ctx.cgContext.addLine(to: CGPoint(x: lineLength, y: <#T##Double#>))
+                }
+            }
+
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.setLineWidth(5)
+            ctx.cgContext.strokePath()
         }
+
+        imageView.image = img
     }
 }
 
-//func drawFunnelWithLines()
+//func drawFibonacciSquare()
 //{
 //    let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
-//    
+//
 //    let img         = renderer.image { ctx in
 //        ctx.cgContext.translateBy(x: 256, y: 256)
-//        
+//
 //        var first           = true
 //        var length: CGFloat = 256
-//        
+//
 //        for _ in 0 ..< 256 {
 //            ctx.cgContext.rotate(by: .pi / 2)
 //            if first { ctx.cgContext.move(to: CGPoint(x: length, y: 50)); first = false }
 //            else { ctx.cgContext.addLine(to: CGPoint(x: length, y: 50)) }
 //            length *= 0.99
 //        }
-//        
+//
 //        ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
 //        ctx.cgContext.strokePath()
 //    }
-//    
+//
 //    imageView.image = img
 //}
