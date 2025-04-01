@@ -15,6 +15,7 @@
 		401E028A2D91C68600DD5BA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401E027C2D91C68600DD5BA6 /* LaunchScreen.storyboard */; };
 		401E028B2D91C68600DD5BA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401E027E2D91C68600DD5BA6 /* Main.storyboard */; };
 		401F33B12D98483D00FF76AD /* Constants+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401F33B02D98483D00FF76AD /* Constants+Utils.swift */; };
+		40B771652D9B786100F64D3D /* CoreGraphics+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B771642D9B786100F64D3D /* CoreGraphics+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		401E02812D91C68600DD5BA6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		401E02832D91C68600DD5BA6 /* Project27_MouseCoreGraphicsSandbox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project27_MouseCoreGraphicsSandbox.xcdatamodel; sourceTree = "<group>"; };
 		401F33B02D98483D00FF76AD /* Constants+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Utils.swift"; sourceTree = "<group>"; };
+		40B771642D9B786100F64D3D /* CoreGraphics+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				401F33B02D98483D00FF76AD /* Constants+Utils.swift */,
+				40B771642D9B786100F64D3D /* CoreGraphics+Utils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				401E02862D91C68600DD5BA6 /* SceneDelegate.swift in Sources */,
 				401F33B12D98483D00FF76AD /* Constants+Utils.swift in Sources */,
 				401E02872D91C68600DD5BA6 /* HomeVC.swift in Sources */,
+				40B771652D9B786100F64D3D /* CoreGraphics+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

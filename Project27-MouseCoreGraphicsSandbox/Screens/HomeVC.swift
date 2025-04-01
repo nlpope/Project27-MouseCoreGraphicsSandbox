@@ -10,9 +10,15 @@ class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepAreaAndPrintBounds()
+        heyTwin()
+    }
+    
+    
+    func prepAreaAndPrintBounds()
+    {
         print(UIScreen.main.bounds.size)
         imageView.backgroundColor = .systemGray2
-        heyTwin()
     }
 
     @IBAction func redrawTapped(_ sender: Any) {
@@ -264,28 +270,49 @@ class HomeVC: UIViewController {
             size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
+            // MAKE THIS LESS HARD CODED - SO I CAN RESET TO THIS POINT ON EACH LETTER
             ctx.cgContext.translateBy(x: 10, y: 100)
-            var startOfLetter = true
-            var currentLetter = 0
-            var startPointX: CGFloat = 0
-            var lineLength: CGFloat = 10
-
-            // letter T
+            
+            var startOfLetter           = true
+            var currentLetter           = 0
+            var startPoint              = CGPoint(x: 0, y: 0)
+            let lineLength: CGFloat     = 100
+            
+            let ninetyDeg: CGFloat      = .pi / 2
+            let seventyFiveDeg: CGFloat = 1.309
+            
+            /**
+             1. set rotations to be either 90 deg or 45 deg
+             2. after every stroke, translate the graph to to end of said stroke
+             */
+            
             for _ in 0 ... 10 {
                 if startOfLetter {
-                    ctx.cgContext.move(to: CGPoint(x: startPointX, y: 0))
+                    ctx.cgContext.move(to: startPoint)
                     startOfLetter = false
-                    startPointX += 125
-                } else {
-                    switch currentLetter {
-                    // T
-                    case 0:
-                        
-                    default:
-                        break
-                    }
-                    ctx.cgContext.addLine(to: CGPoint(x: lineLength, y: <#T##Double#>))
                 }
+                switch currentLetter {
+                // T
+                case 0:
+                    rotateAddTranslateReset(ctx, atAngle: 0, lineLength: lineLength)
+                    rotateAddTranslateReset(ctx, atAngle: ninetyDeg, lineLength: lineLength)
+//                    ctx.cgContext.addLine(to: CGPoint(x: lineLength, y: 0))
+//                    ctx.cgContext.move(to: CGPoint(x: lineLength / 2, y: 0))
+//                    ctx.cgContext.addLine(to: CGPoint(x: lineLength / 2, y: lineLength))
+                // W
+                case 1:
+                    ctx.cgContext.translateBy(x: 125, y: 0)
+                    rotateAddTranslateReset(ctx, atAngle: seventyFiveDeg, lineLength: lineLength)
+                    rotateAddTranslateReset(ctx, atAngle: -seventyFiveDeg, lineLength: lineLength / 2)
+                
+                default:
+                    break
+                }
+                
+                startPoint.x += 125
+                startPoint.y = 0
+                startOfLetter = true
+                currentLetter += 1
             }
 
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
