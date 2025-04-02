@@ -192,17 +192,16 @@ class HomeVC: UIViewController
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = .center
+            let paragraphStyle          = NSMutableParagraphStyle()
+            paragraphStyle.alignment    = .center
 
             let attrs: [NSAttributedString.Key: Any] = [
                 .font: UIFont.systemFont(ofSize: 36),
                 .paragraphStyle: paragraphStyle,
             ]
 
-            let string = "The best-laid schemes o'\nmice an' men gang aft agley"
-            let attributedString = NSAttributedString(
-                string: string, attributes: attrs)
+            let string                  = "The best-laid schemes o'\nmice an' men gang aft agley"
+            let attributedString        = NSAttributedString(string: string, attributes: attrs)
             attributedString.draw(
                 with: CGRect(x: 32, y: 32, width: 448, height: 448),
                 options: .usesLineFragmentOrigin,
@@ -278,7 +277,6 @@ class HomeVC: UIViewController
             
             for _ in 0 ... 10 {
                 switch currentLetter {
-                /** be sure to end at top right of letter at every case*/
                 case 0:
                     CGLetters.drawT(inContext: ctx, lineLength: lineLength)
                 case 1:

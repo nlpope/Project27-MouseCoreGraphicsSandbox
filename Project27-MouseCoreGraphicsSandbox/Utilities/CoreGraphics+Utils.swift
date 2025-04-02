@@ -6,7 +6,8 @@ import UIKit
 
 //-------------------------------------//
 // MARK: ROTATION ANGLES
-enum RotationAngles {
+enum RotationAngles
+{
     static let zero: CGFloat        = 0.0
     static let seventyFive: CGFloat = 1.309
     static let fortyFive: CGFloat   = .pi / 4
@@ -15,7 +16,10 @@ enum RotationAngles {
 
 //-------------------------------------//
 // MARK: INDIVIDUAL LETTER LOGIC
-enum CGLetters {
+
+enum CGLetters
+{
+    /** be sure to end at top right of letter at every case*/
     static func drawT(inContext ctx: UIGraphicsImageRendererContext, lineLength: CGFloat)
     {
         rotateAddTranslateReset(ctx, atAngle: RotationAngles.zero, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
@@ -49,6 +53,7 @@ enum CGLetters {
 
 //-------------------------------------//
 // MARK: MAIN 'RATR' METHOD
+
 public func rotateAddTranslateReset(_ ctx: UIGraphicsImageRendererContext,
                                     atAngle rotationAngle: CGFloat,
                                     backTrackToMidPoint: Bool,
