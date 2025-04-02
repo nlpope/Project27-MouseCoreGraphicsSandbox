@@ -270,44 +270,34 @@ class HomeVC: UIViewController {
             size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
-            // MAKE THIS LESS HARD CODED - SO I CAN RESET TO THIS POINT ON EACH LETTER
-            ctx.cgContext.translateBy(x: 10, y: 100)
+            ctx.cgContext.translateBy(x: 10, y: 200)
             
-            let ninetyDeg: CGFloat      = .pi / 2
-            let seventyFiveDeg: CGFloat = 1.309
+            var newStartPoint           = CGPoint(x: 0, y: 0)
             var currentLetter           = 0
-            var startPoint              = CGPoint(x: 0, y: 0)
             let lineLength: CGFloat     = 100
-            var startOfNewLetter        = true {
-                didSet { currentLetter += 1 }
-            }
             
             for _ in 0 ... 10 {
-                if startOfNewLetter {
-                    ctx.cgContext.move(to: startPoint)
-                    startOfNewLetter = false
-                }
                 switch currentLetter {
                 // T
-                case 1:
-                    rotateAddTranslateReset(ctx, atAngle: 0, backTrackToMidPoint: false, lineLength: lineLength)
-//                    rotateAddTranslateReset(ctx, atAngle: ninetyDeg, backTrackToMidPoint: true, lineLength: lineLength)
-//                    ctx.cgContext.addLine(to: CGPoint(x: lineLength, y: 0))
-//                    ctx.cgContext.move(to: CGPoint(x: lineLength / 2, y: 0))
-//                    ctx.cgContext.addLine(to: CGPoint(x: lineLength / 2, y: lineLength))
+                case 0:
+                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.zero, backTrackToMidPoint: false, lineLength: lineLength)
+                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.ninety, backTrackToMidPoint: true, lineLength: lineLength)
+                    // AT TOP RIGHT OF LETTER
                 // W
-                case 2:
-                    ctx.cgContext.translateBy(x: 125, y: 0)
-                    rotateAddTranslateReset(ctx, atAngle: seventyFiveDeg, backTrackToMidPoint: false, lineLength: lineLength)
-                    rotateAddTranslateReset(ctx, atAngle: -seventyFiveDeg, backTrackToMidPoint: false, lineLength: lineLength / 2)
+                case 1:
+                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength)
+                    rotateAddTranslateReset(ctx, atAngle: -RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength / 2)
+                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength / 2)
+                    rotateAddTranslateReset(ctx, atAngle: -RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength)
                 
                 default:
                     break
                 }
                 
-                startPoint.x += 125
-                startPoint.y = 0
-                startOfNewLetter = true
+                // BE SURE YOU'RE AT TOP RIGHT OF LETTER BY THIS POINT
+                currentLetter += 1
+                newStartPoint.x += 20
+                ctx.cgContext.translateBy(x: newStartPoint.x, y: 0)
             }
 
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
