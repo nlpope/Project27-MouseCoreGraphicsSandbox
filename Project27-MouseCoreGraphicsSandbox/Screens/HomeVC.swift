@@ -264,6 +264,7 @@ class HomeVC: UIViewController
         imageView.image = img
     }
 
+    
     func heyTwin()
     {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
