@@ -189,9 +189,9 @@ class HomeVC: UIViewController
     
     func drawMouseAndText()
     {
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
-        let img = renderer.image { ctx in
+        let img         = renderer.image { ctx in
             let paragraphStyle          = NSMutableParagraphStyle()
             paragraphStyle.alignment    = .center
 
@@ -207,7 +207,7 @@ class HomeVC: UIViewController
                 options: .usesLineFragmentOrigin,
                 context: nil)
 
-            let mouse = UIImage(named: ImageKeys.mouse)
+            let mouse                   = UIImage(named: ImageKeys.mouse)
             mouse?.draw(at: CGPoint(x: 300, y: 150))
         }
 
