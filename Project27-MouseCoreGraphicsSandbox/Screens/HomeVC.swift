@@ -270,7 +270,7 @@ class HomeVC: UIViewController {
             size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
-            ctx.cgContext.translateBy(x: 10, y: 200)
+            ctx.cgContext.translateBy(x: 85, y: 200)
             
             var newStartPoint           = CGPoint(x: 0, y: 0)
             var currentLetter           = 0
@@ -278,23 +278,25 @@ class HomeVC: UIViewController {
             
             for _ in 0 ... 10 {
                 switch currentLetter {
-                // T
+                /** end at top right of letter at every case*/
                 case 0:
-                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.zero, backTrackToMidPoint: false, lineLength: lineLength)
-                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.ninety, backTrackToMidPoint: true, lineLength: lineLength)
-                    // AT TOP RIGHT OF LETTER
-                // W
+                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.zero, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
+                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.ninety, backTrackToMidPoint: true, lineLength: lineLength, snapBackToOrigin: false)
                 case 1:
-                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength)
-                    rotateAddTranslateReset(ctx, atAngle: -RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength / 2)
-                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength / 2)
-                    rotateAddTranslateReset(ctx, atAngle: -RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength)
-                
+                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
+                    rotateAddTranslateReset(ctx, atAngle: -RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength / 2, snapBackToOrigin: false)
+                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength / 2, snapBackToOrigin: false)
+                    rotateAddTranslateReset(ctx, atAngle: -RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
+                case 2:
+                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.ninety, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: true)
+                case 3:
+                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.ninety, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: true)
+                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.fortyFive, backTrackToMidPoint: false, lineLength: lineLength * 1.35, snapBackToOrigin: false)
+                    rotateAddTranslateReset(ctx, atAngle: -RotationAngles.ninety, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
                 default:
                     break
                 }
                 
-                // BE SURE YOU'RE AT TOP RIGHT OF LETTER BY THIS POINT
                 currentLetter += 1
                 newStartPoint.x += 20
                 ctx.cgContext.translateBy(x: newStartPoint.x, y: 0)
@@ -308,27 +310,3 @@ class HomeVC: UIViewController {
         imageView.image = img
     }
 }
-
-//func drawFibonacciSquare()
-//{
-//    let renderer    = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
-//
-//    let img         = renderer.image { ctx in
-//        ctx.cgContext.translateBy(x: 256, y: 256)
-//
-//        var first           = true
-//        var length: CGFloat = 256
-//
-//        for _ in 0 ..< 256 {
-//            ctx.cgContext.rotate(by: .pi / 2)
-//            if first { ctx.cgContext.move(to: CGPoint(x: length, y: 50)); first = false }
-//            else { ctx.cgContext.addLine(to: CGPoint(x: length, y: 50)) }
-//            length *= 0.99
-//        }
-//
-//        ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-//        ctx.cgContext.strokePath()
-//    }
-//
-//    imageView.image = img
-//}
