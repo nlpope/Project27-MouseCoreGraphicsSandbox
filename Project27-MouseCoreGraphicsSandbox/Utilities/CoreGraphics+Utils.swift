@@ -4,6 +4,8 @@
 
 import UIKit
 
+//-------------------------------------//
+// MARK: ROTATION ANGLES
 enum RotationAngles {
     static let zero: CGFloat        = 0.0
     static let seventyFive: CGFloat = 1.309
@@ -11,6 +13,42 @@ enum RotationAngles {
     static let ninety: CGFloat      = .pi / 2
 }
 
+//-------------------------------------//
+// MARK: INDIVIDUAL LETTER LOGIC
+enum CGLetters {
+    static func drawT(inContext ctx: UIGraphicsImageRendererContext, lineLength: CGFloat)
+    {
+        rotateAddTranslateReset(ctx, atAngle: RotationAngles.zero, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
+        rotateAddTranslateReset(ctx, atAngle: RotationAngles.ninety, backTrackToMidPoint: true, lineLength: lineLength, snapBackToOrigin: false)
+    }
+    
+    
+    static func drawW(inContext ctx: UIGraphicsImageRendererContext, lineLength: CGFloat)
+    {
+        rotateAddTranslateReset(ctx, atAngle: RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
+        rotateAddTranslateReset(ctx, atAngle: -RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength / 2, snapBackToOrigin: false)
+        rotateAddTranslateReset(ctx, atAngle: RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength / 2, snapBackToOrigin: false)
+        rotateAddTranslateReset(ctx, atAngle: -RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
+    }
+    
+    
+    static func drawI(inContext ctx: UIGraphicsImageRendererContext, lineLength: CGFloat)
+    {
+        rotateAddTranslateReset(ctx, atAngle: RotationAngles.ninety, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: true)
+
+    }
+    
+    
+    static func drawN(inContext ctx: UIGraphicsImageRendererContext, lineLength: CGFloat)
+    {
+        rotateAddTranslateReset(ctx, atAngle: RotationAngles.ninety, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: true)
+        rotateAddTranslateReset(ctx, atAngle: RotationAngles.fortyFive, backTrackToMidPoint: false, lineLength: lineLength * 1.35, snapBackToOrigin: false)
+        rotateAddTranslateReset(ctx, atAngle: -RotationAngles.ninety, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
+    }
+}
+
+//-------------------------------------//
+// MARK: MAIN 'RATR' METHOD
 public func rotateAddTranslateReset(_ ctx: UIGraphicsImageRendererContext,
                                     atAngle rotationAngle: CGFloat,
                                     backTrackToMidPoint: Bool,
@@ -32,6 +70,4 @@ public func rotateAddTranslateReset(_ ctx: UIGraphicsImageRendererContext,
         if !snapBackToOrigin { ctx.cgContext.translateBy(x: lineLength, y: 0) }
         ctx.cgContext.rotate(by: -rotationAngle)
     }
-    
-    // if final stroke hold same behavior as the backtracktomidpoint and bounce back to top
 }

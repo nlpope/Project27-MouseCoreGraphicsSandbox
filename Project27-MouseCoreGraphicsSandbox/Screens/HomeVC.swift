@@ -4,11 +4,13 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController
+{
     @IBOutlet var imageView: UIImageView!
     var currentDrawType = 0
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         prepAreaAndPrintBounds()
         heyTwin()
@@ -21,7 +23,9 @@ class HomeVC: UIViewController {
         imageView.backgroundColor = .systemGray2
     }
 
-    @IBAction func redrawTapped(_ sender: Any) {
+    
+    @IBAction func redrawTapped(_ sender: Any)
+    {
         currentDrawType += 1
 
         if currentDrawType > 7 { currentDrawType = 0 }
@@ -74,9 +78,9 @@ class HomeVC: UIViewController {
      see: Paul Hudson > Project27-MouseCoreGraphicsSandBox
      */
 
-    func drawRectangle() {
-        let renderer = UIGraphicsImageRenderer(
-            size: CGSize(width: 512, height: 512))
+    func drawRectangle()
+    {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
             let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
@@ -93,9 +97,10 @@ class HomeVC: UIViewController {
         imageView.image = img
     }
 
-    func drawCircle() {
-        let renderer = UIGraphicsImageRenderer(
-            size: CGSize(width: 512, height: 512))
+    
+    func drawCircle()
+    {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
             let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
@@ -108,13 +113,14 @@ class HomeVC: UIViewController {
             ctx.cgContext.addEllipse(in: rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
         }
-
+        
         imageView.image = img
     }
 
-    func drawCheckerBoard() {
-        let renderer = UIGraphicsImageRenderer(
-            size: CGSize(width: 512, height: 512))
+    
+    func drawCheckerBoard()
+    {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
             ctx.cgContext.setFillColor(UIColor.black.cgColor)
@@ -122,24 +128,17 @@ class HomeVC: UIViewController {
             for row in 0..<8 {
                 for col in 0..<8 {
                     guard (row + col) % 2 == 0 else { continue }
-                    ctx.cgContext.fill(
-                        CGRect(
-                            x: col * 64,
-                            y: row * 64,
-                            width: 64,
-                            height: 64)
-                    )
+                    ctx.cgContext.fill(CGRect(x: col * 64, y: row * 64, width: 64, height: 64))
                 }
             }
-
         }
-
         imageView.image = img
     }
 
-    func drawRotatedSquares() {
-        let renderer = UIGraphicsImageRenderer(
-            size: CGSize(width: 512, height: 512))
+    
+    func drawRotatedSquares()
+    {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
             ctx.cgContext.translateBy(x: 256, y: 256)
@@ -148,8 +147,7 @@ class HomeVC: UIViewController {
             let amount = Double.pi / Double(rotations)
             for _ in 0..<rotations {
                 ctx.cgContext.rotate(by: CGFloat(amount))
-                ctx.cgContext.addRect(
-                    CGRect(x: -128, y: -128, width: 256, height: 256))
+                ctx.cgContext.addRect(CGRect(x: -128, y: -128, width: 256, height: 256))
             }
 
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
@@ -159,9 +157,10 @@ class HomeVC: UIViewController {
         imageView.image = img
     }
 
-    func drawFibonacciSquare() {
-        let renderer = UIGraphicsImageRenderer(
-            size: CGSize(width: 512, height: 512))
+    
+    func drawFibonacciSquare()
+    {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
             ctx.cgContext.translateBy(x: 256, y: 256)
@@ -187,9 +186,10 @@ class HomeVC: UIViewController {
         imageView.image = img
     }
 
-    func drawMouseAndText() {
-        let renderer = UIGraphicsImageRenderer(
-            size: CGSize(width: 512, height: 512))
+    
+    func drawMouseAndText()
+    {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
             let paragraphStyle = NSMutableParagraphStyle()
@@ -215,12 +215,12 @@ class HomeVC: UIViewController {
         imageView.image = img
     }
 
+    
     func drawEmoji() {
-        let renderer = UIGraphicsImageRenderer(
-            size: CGSize(width: 512, height: 512))
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
-            // HEAD
+            /** head */
             let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
                 .insetBy(dx: 15, dy: 15)
 
@@ -231,7 +231,7 @@ class HomeVC: UIViewController {
             ctx.cgContext.addEllipse(in: rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
 
-            // LEFT EYE
+            /** left eye */
             let rectangle2 = CGRect(x: 80, y: 215, width: 120, height: 0)
 
             ctx.cgContext.setFillColor(UIColor.black.cgColor)
@@ -241,7 +241,7 @@ class HomeVC: UIViewController {
             ctx.cgContext.addRect(rectangle2)
             ctx.cgContext.drawPath(using: .fillStroke)
 
-            // RIGHT EYE
+            /** right eye */
             let rectangle3 = CGRect(x: 290, y: 215, width: 120, height: 0)
 
             ctx.cgContext.setFillColor(UIColor.black.cgColor)
@@ -251,7 +251,7 @@ class HomeVC: UIViewController {
             ctx.cgContext.addRect(rectangle3)
             ctx.cgContext.drawPath(using: .fillStroke)
 
-            // MOUTH
+            /** mouth */
             let rectangle4 = CGRect(x: 190, y: 380, width: 120, height: 0)
 
             ctx.cgContext.setFillColor(UIColor.black.cgColor)
@@ -265,9 +265,9 @@ class HomeVC: UIViewController {
         imageView.image = img
     }
 
-    func heyTwin() {
-        let renderer = UIGraphicsImageRenderer(
-            size: CGSize(width: 512, height: 512))
+    func heyTwin()
+    {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
 
         let img = renderer.image { ctx in
             ctx.cgContext.translateBy(x: 85, y: 200)
@@ -278,21 +278,15 @@ class HomeVC: UIViewController {
             
             for _ in 0 ... 10 {
                 switch currentLetter {
-                /** end at top right of letter at every case*/
+                /** be sure to end at top right of letter at every case*/
                 case 0:
-                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.zero, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
-                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.ninety, backTrackToMidPoint: true, lineLength: lineLength, snapBackToOrigin: false)
+                    CGLetters.drawT(inContext: ctx, lineLength: lineLength)
                 case 1:
-                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
-                    rotateAddTranslateReset(ctx, atAngle: -RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength / 2, snapBackToOrigin: false)
-                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength / 2, snapBackToOrigin: false)
-                    rotateAddTranslateReset(ctx, atAngle: -RotationAngles.seventyFive, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
+                    CGLetters.drawW(inContext: ctx, lineLength: lineLength)
                 case 2:
-                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.ninety, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: true)
+                    CGLetters.drawI(inContext: ctx, lineLength: lineLength)
                 case 3:
-                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.ninety, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: true)
-                    rotateAddTranslateReset(ctx, atAngle: RotationAngles.fortyFive, backTrackToMidPoint: false, lineLength: lineLength * 1.35, snapBackToOrigin: false)
-                    rotateAddTranslateReset(ctx, atAngle: -RotationAngles.ninety, backTrackToMidPoint: false, lineLength: lineLength, snapBackToOrigin: false)
+                    CGLetters.drawN(inContext: ctx, lineLength: lineLength)
                 default:
                     break
                 }
